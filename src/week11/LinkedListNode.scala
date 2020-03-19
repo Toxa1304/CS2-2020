@@ -13,6 +13,17 @@ class LinkedListNode[A](var value: A, var next: LinkedListNode[A]) {
     new LinkedListNode[A](a, this)
   }
 
+
+  def append(a: A): Unit ={
+    if (this.next != null){
+      this.next.append(a)
+    }
+    else {
+      this.next = new LinkedListNode[A](value = a, next = null)
+    }
+
+  }
+
   /**
     * returns the number of nodes in the list starting with this node
     */
